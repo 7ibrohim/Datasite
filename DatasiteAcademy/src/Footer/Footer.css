@@ -2,18 +2,21 @@
     background: #14151f;
     color: #e6e8eb;
     padding: 3.5rem 2rem 0;
-    /* margin-top: 4rem; */
-    border-radius: 10px;
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.bigfoot{
     width: 100%;
 }
-
 .footer-top {
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 2.5rem;
+    width: 100%;
     padding-bottom: 2.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     

@@ -4,7 +4,7 @@
      box-sizing: border-box;
  }
 
- body {
+ .Big {
      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
      background: #f4f6fa;
      /* min-height: 100vh; */
@@ -23,7 +23,7 @@
      gap: 1rem 2rem;
      background: #ffffff;
      padding: 0.85rem 2rem;
-     border-radius: 60px;
+     /* border-radius: 60px; */
      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.08);
      width: 100%;
      /* max-width: 1500px; */
@@ -31,9 +31,6 @@
      transition: box-shadow 0.25s ease, border-color 0.25s;
  }
 
- .Navbar:hover {
-     border-color: #F4C21A;
- }
 
  .Navbar ul:first-child {
      display: flex;
@@ -238,9 +235,7 @@ body.dark .Navbar {
     box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.4);
 }
 
-body.dark .Navbar:hover {
-    border-color: #F4C21A;
-}
+
 
 body.dark .Navbar ul:nth-child(2) li {
     color: #f1f1f5;

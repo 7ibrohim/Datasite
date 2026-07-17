@@ -25,7 +25,7 @@ function Navbar() {
     };
 
     return (
-        <div>
+        <div className='Big'>
             <div className="Navbar">
                 <ul>
                     <li><img src={logo} alt="" /></li>
