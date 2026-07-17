@@ -4,12 +4,15 @@ import logo from "../assets/logo.png"
 import { useTranslation } from 'react-i18next'
 import { MdLanguage } from "react-icons/md";
 import { CiDark } from "react-icons/ci";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { GoSun } from "react-icons/go";
+import { IoClose } from "react-icons/io5";
 
 function Navbar() {
     const { t, i18n } = useTranslation();
     const [darkMode, setDarkMode] = useState(false);
     const [langOpen, setLangOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         if (darkMode) {
@@ -24,26 +27,33 @@ function Navbar() {
         setLangOpen(false);
     };
 
+    const scrollTo = (id) => {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        setMenuOpen(false); // link bosilganda menyu yopilsin
+    };
+
     return (
         <div className='Big'>
             <div className="Navbar">
                 <ul>
                     <li><img src={logo} alt="" /></li>
                 </ul>
-                <ul>
-                    <li onClick={() => document.getElementById('bosh-sahifa').scrollIntoView({ behavior: 'smooth' })}>
+
+                <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
+                    <li onClick={() => scrollTo('bosh-sahifa')}>
                         {t('navbar.home')}
                     </li>
-                    <li onClick={() => document.getElementById('kurslar').scrollIntoView({ behavior: 'smooth' })}>
+                    <li onClick={() => scrollTo('kurslar')}>
                         {t('navbar.courses')}
                     </li>
-                    <li onClick={() => document.getElementById('natijalar').scrollIntoView({ behavior: 'smooth' })}>
+                    <li onClick={() => scrollTo('natijalar')}>
                         {t('navbar.results')}
                     </li>
-                    <li onClick={() => document.getElementById('xizmatlar').scrollIntoView({ behavior: 'smooth' })}>
+                    <li onClick={() => scrollTo('xizmatlar')}>
                         {t('navbar.services')}
                     </li>
                 </ul>
+
                 <ul>
                     <li className="lang-switcher">
                         <MdLanguage onClick={() => setLangOpen(!langOpen)} />
@@ -57,6 +67,9 @@ function Navbar() {
                     </li>
                     <li onClick={() => setDarkMode(!darkMode)}>
                         {darkMode ? <GoSun /> : <CiDark />}
+                    </li>
+                    <li className="hamburger-btn" onClick={() => setMenuOpen(!menuOpen)}>
+                        {menuOpen ? <IoClose /> : <HiOutlineMenuAlt3 />}
                     </li>
                 </ul>
             </div>
